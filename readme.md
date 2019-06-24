@@ -12,7 +12,7 @@ The objective is to develop a Decentralized Application that explores potential 
 The use case we picked up to meet our objectives is a Loan Origination and Payment Application. The actual implementation of the use case doesn’t cover all intricacies and regulatory aspects of the loan origination and payments process but will be a good indicator of the design aspects to consider while building a DApp on the blockchain
 # The DEMO
 
-![](https://youtu.be/w2GT9wH-S3o)
+[![](http://img.youtube.com/vi/w2GT9wH-S3o/0.jpg)](http://www.youtube.com/watch?v=w2GT9wH-S3o "")
 
 # The Blockchain N/W Architecture of the Demo
 
