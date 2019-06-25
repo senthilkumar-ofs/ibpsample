@@ -68,4 +68,4 @@ The Web Application
 https://github.com/objectfrontiergit/IBP-LoanMgtUI
 
 ## contact
-Please reachout to ganeshram.ramamurthy@objectfrontier.com for any questions about the demo and codebase.
+Please reachout to ofstechsupport@objectfrontier.com for any questions about the demo and codebase.
