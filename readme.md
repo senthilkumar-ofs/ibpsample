@@ -69,21 +69,22 @@ Following are the steps involved in deploying application and running the applic
 
 ### Step 1: Clone and Run the Microservices Code Repositories
 
-1. Hyperledger Gateway Services https://github.com/objectfrontiergit/IBP-Gateway 
+#### 1. Hyperledger Gateway Services 
+https://github.com/objectfrontiergit/IBP-Gateway 
 
 * mvn clean install (It'll fetch the dependencies)
 * mvn spring-boot:run & (To run start the application)
 
 The Gateway service APIs shall be used to integrate with the IBM Blockchain Platform(Hyperledger Fabric).
 
-2. Applicant Services
+#### 2. Applicant Services
 https://github.com/objectfrontiergit/IBP-ApplicantAPI
 
 Notes: 
 * Run *src/main/resources/ibp_applicant.sql* this sql file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
 * replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
 
-Lender Services
+#### 3.Lender Services
 
 https://github.com/objectfrontiergit/IBP-BankAPI
 
@@ -97,13 +98,14 @@ Notes:
 * Run * src/main/resources/ibp_lender2.sql* this sql file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
 * replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
 
-Partner Services
+####  4.Partner Services
 https://github.com/objectfrontiergit/IBP-MortgageAPI
 
-The Web Application
+####  5.The Web Application
 https://github.com/objectfrontiergit/IBP-LoanMgtUI
 
-Make sure you keep  *src/main/resources/application.properties* file upto date matching your network details
+ Make sure you keep 
+ *src/main/resources/application.properties* file upto date matching your network details
 
 ### Running the application in AWS
 
