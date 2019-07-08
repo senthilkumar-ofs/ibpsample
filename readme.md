@@ -17,7 +17,7 @@ The use case we picked up to meet our objectives is a Loan Origination and Payme
 
 # The Blockchain N/W Architecture of the Demo
 
-![](https://lh6.googleusercontent.com/YVc-fNbv4L9WOcwe3IoTBOH_8I7D9SyBUuUrQZCRSalWgduXV9dd6Hf65PAqlW0nIPFjOHxQHd1KDEPMlMbrjztFRlGwyGs_A4MgLgInJd1FLLlD0iDOWoQZm-m-rulcbhs1tzv-)
+![](https://cdn-images-1.medium.com/max/1600/1*B9s7br7Ltqsi88lMS6DWGw.png)
 
 ## Application Architecture
 
@@ -33,7 +33,7 @@ The design of the Blockchain network is just one piece of the puzzle. Applicatio
 
 We followed a modular microservices architecture. The complexity of interaction with the blockchain itself is abstracted out to a generic component that knows how to invoke chaincode to read/write data from/to blockchain. This helps to keep the other services lightweight and flexible.
 
-![](https://lh3.googleusercontent.com/gsV3mqDKp5GPZ-07hC4se-RUp8wOq4Ezm6RNdsamDLZlHkfolXzZ39bJWhrsxU1MIkLgdmQpOsmV1K2UMkRRPUBAojfBtm7Z8-vhNvqPriHg0PYtKVE4F0AFSl0GqR-WB4LFH7UO)
+![](https://cdn-images-1.medium.com/max/1600/1*6BWxsORbJPI1WrevJXAi_Q.png)
 
 ## Data Flow
 
@@ -42,7 +42,7 @@ We followed a modular microservices architecture. The complexity of interaction 
 -   The blockchain calls are asynchronous. Once the transactions are added to the blockchain the Event Hub pushes the signal to all interested subscribers through a callback endpoint.
 -   We use WebSockets for the presentation layer to react to the events from the Event hub.
 
-![](https://lh5.googleusercontent.com/Eh80OvHl9ZIPP322cnP3Y92NQqN_xNr1aZg4KMDWVheNLQwvds-FQu7Kuki5CIglyyv3aeD6Ct0Kg1PVtp-9X3iIE2aU2I4DfsxAKGN57LtaDaiQDLvYmaESoua71t-TQPuNABvT)
+![](https://cdn-images-1.medium.com/max/1600/1*bZ7jNja2DaqcgYX6ELZc9A.gif)
 
 ## more documentation 
 https://www.objectfrontier.com/blog/ibm-blockchain-platform-2-0-beta-run-your-blockchain-n-w-in-10-simple-steps/
