@@ -70,7 +70,7 @@ Following are the steps involved in deploying application and running the applic
 https://github.com/objectfrontiergit/IBP-Gateway 
 
 * mvn clean install (It'll fetch the dependencies)
-* mvn spring-boot:run & (To runthe application)
+* mvn spring-boot:run & (To run the application)
 
 The Gateway service APIs shall be used to integrate with the IBM Blockchain Platform
 
