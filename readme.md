@@ -70,9 +70,9 @@ Following are the steps involved in deploying application and running the applic
 https://github.com/objectfrontiergit/IBP-Gateway 
 
 * mvn clean install (It'll fetch the dependencies)
-* mvn spring-boot:run & (To run start the application)
+* mvn spring-boot:run & (To runthe application)
 
-The Gateway service APIs shall be used to integrate with the IBM Blockchain Platform(Hyperledger Fabric).
+The Gateway service APIs shall be used to integrate with the IBM Blockchain Platform
 
 #### 2. Applicant Services
 https://github.com/objectfrontiergit/IBP-ApplicantAPI
@@ -86,13 +86,13 @@ Notes:
 https://github.com/objectfrontiergit/IBP-BankAPI
 
 Notes: 
-* Run * src/main/resources/ibp_lender.sql* this sql file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
+* Run * src/main/resources/ibp_lender.sql* this file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
 * replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
 
 https://github.com/objectfrontiergit/IBP-Lender2API
 
 Notes: 
-* Run * src/main/resources/ibp_lender2.sql* this sql file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
+* Run * src/main/resources/ibp_lender2.sql* this file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
 * replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
 
 ####  4.Partner Services
