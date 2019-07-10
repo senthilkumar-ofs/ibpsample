@@ -57,14 +57,11 @@ Following are the steps involved in deploying application and running the applic
 
 ### Prerequisites
 
-* Intel Quad Core processor
-* 8 GB RAM
-* 160 GB internal hard drive
-* Ubuntu 16.04
+
 * Java
 * MySQL
 * Tomcat 8.5
-* IBM - Blockchain Platform
+* IBM Blockchain Platform
 
 
 ### Step 1: Clone and Run the Microservices Code Repositories
