@@ -83,7 +83,7 @@ Notes:
 
 #### 3.Lender Services
 
-https://github.com/objectfrontiergit/IBP-BankAPI
+https://github.com/objectfrontiergit/IBP-Lender1API
 
 Notes: 
 * Run * src/main/resources/ibp_lender.sql* this file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
@@ -96,7 +96,7 @@ Notes:
 * replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
 
 ####  4.Partner Services
-https://github.com/objectfrontiergit/IBP-MortgageAPI
+https://github.com/objectfrontiergit/IBP-PartnerServicesAPI
 
 ####  5.The Web Application
 https://github.com/objectfrontiergit/IBP-LoanMgtUI
