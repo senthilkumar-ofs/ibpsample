@@ -23,7 +23,7 @@ The use case we picked up to meet our objectives is a Loan Origination and Payme
 
 The design of the Blockchain network is just one piece of the puzzle. Application design and architecture is equally important. Consider the following as you design your application:
 
--   Although IBM Blockchain Platform with Hyperledger Fabric at its heart scales well when compared to the public blockchain platforms, it is not a transactional database, so don’t expect throughputs of 
+-   Although IBM Blockchain Platform with Hyperledger Fabric at its heart scales well when compared to the public blockchain platforms, it is not a transactional database, so don’t expect throughputs of traditional relational database
 -   Use the blockchain for what it has to offer — trust, transparency, and immutability. Decide what you store in your blockchain based on that.
 -   Embrace asynchronous event-driven programming — the blockchain nodes are only eventually consistent. The consensus process is not instantaneous.
 -   The data in the blockchain is secured by design through encryption and various governing principles of the network, but the security stops at the blockchain network level. You should still address the application security with your design.
