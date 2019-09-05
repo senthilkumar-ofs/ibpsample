@@ -58,170 +58,94 @@ Following are the steps involved in deploying application and running the applic
 ### Prerequisites
 
 
-* Java
-* MySQL
-* Tomcat 8.5
+* Docker
 * IBM Blockchain Platform
 
 
-### Step 1: Clone and Run the Microservices Code Repositories
+### Step 1: Get Docker Images and Run the Microservices
 
 #### 1. Hyperledger Gateway Services 
-https://github.com/objectfrontiergit/IBP-Gateway 
+https://hub.docker.com/r/amarofs/ibp-gateway 
 
-* mvn clean install (It'll fetch the dependencies)
-* mvn spring-boot:run & (To run the application)
+* docker run -v /home/fsadmin/ibp-devops/connectionProfile.json:/tmp/connectionProfile.json -v /home/fsadmin/ibp-devops/application.properties:/tmp/application.properties -p 8090:8090 -e  network.config.path=/tmp/connectionProfile.json --env JAVA\_OPTS=&quot;-Dspring.config.location=/tmp/application.properties;-Dlogging.level.org.springframework=DEBUG&quot; --name gateway amarofs/ibp-gateway
+
+###### Notes: 
+
+i. /home/ofsadmin/ibp-devops/connectionProfile.json -> The connection profile need to be downloaded from “IBM Network” and should append the channel details in this JSON.
+
+ii. /home/ofsadmin/ibp-devops/application.properties -> Update custom configurations( peer name, channel details, Gateway URL) in this file and have it in host machine. 
+
+iii. /tmp/connectionProfile.json && /tmp/application.properties -> This files will be available in Docker container. 
+
+iv. network.config.path -> Provide the path which mentioned in the -v argument connection profile(probably /tmp/connectionProfile.json).
+
+v. JAVA_OPTS -> The java configurations will be used while running the jar in docker images.
 
 The Gateway service APIs shall be used to integrate with the IBM Blockchain Platform
 
 #### 2. Applicant Services
-https://github.com/objectfrontiergit/IBP-ApplicantAPI
+https://hub.docker.com/r/amarofs/ibp-applicant
 
-Notes: 
-* Run *src/main/resources/ibp_applicant.sql* this sql file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
-* replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
+* docker run -v /home/ofsadmin/ibp-devops/connectionProfile.json:/tmp/connectionProfile.json -v /home/ofsadmin/ibp-devops/application.properties:/tmp/application.properties -p 8090:8090 -e  network.config.path=/tmp/connectionProfile.json --env JAVA_OPTS="-Dspring.config.location=/tmp/application.properties;-Dlogging.level.org.springframework=DEBUG" --name applicant amarofs/applicant
+
+###### Notes: 
+
+i. /home/ofsadmin/ibp-devops/connectionProfile.json -> The connection profile need to be downloaded from “IBM Network” and should append the channel details in this JSON.
+
+ii. /home/ofsadmin/ibp-devops/application.properties -> Update custom configurations( peer name, channel details, Gateway URL) in this file and have it in host machine. 
+
+iii. /tmp/connectionProfile.json && /tmp/application.properties -> This files will be available in Docker container. 
+
+iv. network.config.path -> Provide the path which mentioned in the -v argument connection profile(probably /tmp/connectionProfile.json).
+
+v. JAVA_OPTS -> The java configurations will be used while running the jar in docker images.
 
 #### 3.Lender Services
 
-https://github.com/objectfrontiergit/IBP-Lender1API
+https://hub.docker.com/r/amarofs/ibp-lender1
 
-Notes: 
-* Run * src/main/resources/ibp_lender.sql* this file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
-* replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
 
-https://github.com/objectfrontiergit/IBP-Lender2API
+* docker run -v /home/ofsadmin/ibp-devops/connectionProfile.json:/tmp/connectionProfile.json -v /home/ofsadmin/ibp-devops/application.properties:/tmp/application.properties -p 8090:8090 -e  network.config.path=/tmp/connectionProfile.json --env JAVA_OPTS="-Dspring.config.location=/tmp/application.properties;-Dlogging.level.org.springframework=DEBUG" --name lender1 amarofs/lender1
 
-Notes: 
-* Run * src/main/resources/ibp_lender2.sql* this file in your database. update the DB connection details in *src/main/resources/application.properties* before you build and deploy
-* replace *src/main/resources/config/connectionProfile.json* with the JSON from your network
+https://hub.docker.com/r/amarofs/ibp-lender2
+
+
+* docker run -v /home/ofsadmin/ibp-devops/connectionProfile.json:/tmp/connectionProfile.json -v /home/ofsadmin/ibp-devops/application.properties:/tmp/application.properties -p 8090:8090 -e  network.config.path=/tmp/connectionProfile.json --env JAVA_OPTS="-Dspring.config.location=/tmp/application.properties;-Dlogging.level.org.springframework=DEBUG" --name lender2 amarofs/lender2
+
+###### Notes: 
+
+i. /home/ofsadmin/ibp-devops/connectionProfile.json -> The connection profile need to be downloaded from “IBM Network” and should append the channel details in this JSON.
+
+ii. /home/ofsadmin/ibp-devops/application.properties -> Update custom configurations( peer name, channel details, Gateway URL) in this file and have it in host machine. 
+
+iii. /tmp/connectionProfile.json && /tmp/application.properties -> This files will be available in Docker container. 
+
+iv. network.config.path -> Provide the path which mentioned in the -v argument connection profile(probably /tmp/connectionProfile.json).
+
+v. JAVA_OPTS -> The java configurations will be used while running the jar in docker images.
 
 ####  4.Partner Services
-https://github.com/objectfrontiergit/IBP-PartnerServicesAPI
+https://hub.docker.com/r/amarofs/ibp-lender2
+
+* docker run -v /home/ofsadmin/ibp-devops/connectionProfile.json:/tmp/connectionProfile.json -v /home/ofsadmin/ibp-devops/application.properties:/tmp/application.properties -p 8090:8090 -e  network.config.path=/tmp/connectionProfile.json --env JAVA_OPTS="-Dspring.config.location=/tmp/application.properties;-Dlogging.level.org.springframework=DEBUG" --name partner amarofs/partner
+
+###### Notes: 
+
+i. /home/ofsadmin/ibp-devops/connectionProfile.json -> The connection profile need to be downloaded from “IBM Network” and should append the channel details in this JSON.
+
+ii. /home/ofsadmin/ibp-devops/application.properties -> Update custom configurations( peer name, channel details, Gateway URL) in this file and have it in host machine. 
+
+iii. /tmp/connectionProfile.json && /tmp/application.properties -> This files will be available in Docker container. 
+
+iv. network.config.path -> Provide the path which mentioned in the -v argument connection profile(probably /tmp/connectionProfile.json).
+
+v. JAVA_OPTS -> The java configurations will be used while running the jar in docker images.
 
 ####  5.The Web Application
 https://github.com/objectfrontiergit/IBP-LoanMgtUI
 
  Make sure you keep 
  *src/main/resources/application.properties* file upto date matching your network details
-
-### Running the application in AWS
-
-**_1._** **_Java & Tomcat Installation:_**
-
-**Install OpenJDK:**
-
-    $ sudo apt install default-jdk 
-
-(OpenJDK, the open source implementation of the Java Platform is the default Java development and runtime in Ubuntu 16.04.)
-
-**Create Tomcat user:**
-
-    $ sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
-
-
-**Download & Install Tomcat:**
-
-    $ sudo apt install unzip wget
-    $ cd /tmp
-    $ wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.zip
-    $ unzip apache-tomcat-*.zip
-    $ sudo mkdir -p /opt/tomcat
-    $ sudo mv apache-tomcat-8.5.37 /opt/tomcat/
-    $ sudo ln -s /opt/tomcat/apache-tomcat-8.5.37 /opt/tomcat/latest
-    $ sudo chown -R tomcat: /opt/tomcat
-    $ sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
-
-
-**Create a systemd unit file:**
-
-Create a new tomcat.service unit file in the /etc/systemd/system/ directory with the following contents:
-
-$ nano /etc/systemd/system/tomcat.service
-
-    [Unit]
-    Description=Tomcat 8.5 servlet container
-    After=network.target
-    [Service]
-    Type=forking
-    User=tomcat
-    Group=tomcat
-    Environment="JAVA_HOME=/usr/lib/jvm/default-java"
-    Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
-    Environment="CATALINA_BASE=/opt/tomcat/latest"
-    Environment="CATALINA_HOME=/opt/tomcat/latest"
-    Environment="CATALINA_PID=/opt/tomcat/latest/temp/tomcat.pid"
-    Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
-    ExecStart=/opt/tomcat/latest/bin/startup.sh
-    ExecStop=/opt/tomcat/latest/bin/shutdown.sh
-    [Install]
-    WantedBy=multi-user.target
-    
- you then use the following commands
-
-    $ sudo systemctl daemon-reload
-    $ sudo systemctl enable tomcat
-    $ sudo systemctl start tomcat
-    $ sudo systemctl stop tomcat
-    $ sudo systemctl status tomcat
-    $ sudo systemctl restart tomcat
-
-To access tomcat  you will need to open port 8080
-
-**Test the Installation**
-
-Open your browser and type: http://<your_domain_or_IP_address>:8080
-
-**_2._** **_MySQL Installation:_**
-
-**Installing MySQL:**
-
-To install MySQL simply update the package index on your server and install the default package with apt-get.
-
-    $ sudo apt-get update
-    $ sudo apt-get install mysql-server
-    $ mysql_secure_installation
-**Testing MySQL:**
-
-To test mysql, check its status from below command.
-
-$ systemctl status mysql.service
-
-**Database Configurations :**
-
-Use MySQL Command-Line Tool to update database configurations. Login to the tool with root user as below.
-
-ec2-user@host.ip.:~$ mysql -h localhost -u root -p
-
-Enter password: ******
-
-**Create Database:**
-
-CREATE DATABASE IF NOT EXISTS ibp_applicant CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-**Create User:**
-
-CREATE USER 'ibp_user'@'localhost' IDENTIFIED BY 'password';
-
-**Grant Permission:**
-
-GRANT ALL ON ibp_applicant.* TO 'ibp_user'@'localhost' IDENTIFIED BY 'password';
-
-Find SQL files from repo (src/main/resources) and execute here.
-
-**_3._** **_Create & Deploy WAR File:_**
-
-
-Create war file for each API services (Any changes in application.properties, update it before creating war file) .
-
-i. Create WAR file for Gateway (To create WAR file run this command in CLI: mvn clean install)
-
-ii. The war will be created in 'target' folder
-
-iii. Move the war file to server tomcat wepapps path (example: /opt/tomcat/wepapps/) in your EC2 instance
-
-iv. War will be unpacked as ibp-gateway. Then check gateway URL in browser(eg: http://<<yourIP>>:8080/ibp-gateway). Use this URL for remaining API services gateway URL.
-
-Repeate the same process for all the API Services.
 
 **_2._** **_UI Application Setup:_**
 
